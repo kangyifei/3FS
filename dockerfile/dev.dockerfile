@@ -24,7 +24,7 @@ RUN apt-get update                                    &&\
   apt-get clean                                       &&\
   rm -rf /var/lib/apt/lists/*
 ARG FDB_VERSION=7.1.61
-ARG FDB_DOWNLOAD_URL=https://github.com/apple/foundationdb/releases/download/7.1.61/foundationdb-clients_${FDB_VERSION}-1_amd64.deb
+ARG FDB_DOWNLOAD_URL=https://github.com/apple/foundationdb/releases/download/${FDB_VERSION}/foundationdb-clients_${FDB_VERSION}-1_amd64.deb
 RUN wget ${FDB_DOWNLOAD_URL} -O /tmp/foundationdb-clients.deb &&\
   dpkg -i /tmp/foundationdb-clients.deb                       &&\
   rm /tmp/foundationdb-clients.deb
